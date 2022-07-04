@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html class="scroll-smooth" x-init="$watch('darkMode', val => localStorage.setItem('dark', val))" x-data="{darkMode: localStorage.dark === 'true' || (!('dark' in localStorage) && window.matchMedia('(prefers-color-scheme: dark)').matches), dialogPanels: []}" :class="darkMode ? 'dark' : ''" lang='en'>
+<head>
+  
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Envy - Discord Bot</title>
+
+  <link id="heading-font" rel="stylesheet" type="text/css" href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@300;400;500;600;700;800;900&display=swap" media="all" />
+  <script defer src="https://unpkg.com/alpinejs@3.9.0/dist/cdn.min.js"></script>
+  <link href="css/style.css" rel="stylesheet" type="text/css">
+  
+</head>
+<body class="font-body antialiased text-[#41454c] bg-[#FFFFFF] dark:text-[#b3c3d9] dark:bg-[#0d0d0d]">
+  <div class="dark:bg-transparent dark:bg-fixed bg-transparent">
+    <div class="px-4 py-5 mx-auto sm:max-w-xl md:max-w-full lg:max-w-screen-xl md:px-24 lg:px-8">
+      <div class="relative flex items-center justify-between">
+        <div class="flex items-center"><a href="#" class="inline-flex items-center mr-8"><span class="ml-2 text-xl font-bold tracking-wide uppercase text-red-600">ENVY.</span></a>
+          <ul class="flex items-center hidden space-x-8 lg:flex">
+            <li class=""><a href="/docs.html" class="font-medium tracking-wide ">Docs</a></li>
+            <li class=""><a href="https://github.com/addEnvy/envy" class="font-medium tracking-wide ">Github</a></li>
+            <li class=""><a href="https://r6n.5xi.repl.co" class="font-medium tracking-wide ">Team</a></li>
+          </ul>
+        </div>
+        <ul class="flex items-center hidden space-x-8 lg:flex"><span class="text-xl p-2 border rounded-full cursor-pointer"><span x-on:click="darkMode = !darkMode" x-show="!darkMode">
+              <div style="font-size:inherit;color:inherit;padding:2px"><svg stroke="currentColor" fill="currentColor" stroke-width="0" viewBox="0 0 512 512" height="1em" width="1em" xmlns="http://www.w3.org/2000/svg">
+                  <path d="M283.211 512c78.962 0 151.079-35.925 198.857-94.792 7.068-8.708-.639-21.43-11.562-19.35-124.203 23.654-238.262-71.576-238.262-196.954 0-72.222 38.662-138.635 101.498-174.394 9.686-5.512 7.25-20.197-3.756-22.23A258.156 258.156 0 0 0 283.211 0c-141.309 0-256 114.511-256 256 0 141.309 114.511 256 256 256z"></path>
+                </svg></div>
+            </span><span x-on:click="darkMode = !darkMode" x-show="darkMode">
+              <div style="font-size:inherit;color:inherit;padding:2px"><svg stroke="currentColor" fill="currentColor" stroke-width="0" viewBox="0 0 512 512" height="1em" width="1em" xmlns="http://www.w3.org/2000/svg">
+                  <path d="M256 160c-52.9 0-96 43.1-96 96s43.1 96 96 96 96-43.1 96-96-43.1-96-96-96zm246.4 80.5l-94.7-47.3 33.5-100.4c4.5-13.6-8.4-26.5-21.9-21.9l-100.4 33.5-47.4-94.8c-6.4-12.8-24.6-12.8-31 0l-47.3 94.7L92.7 70.8c-13.6-4.5-26.5 8.4-21.9 21.9l33.5 100.4-94.7 47.4c-12.8 6.4-12.8 24.6 0 31l94.7 47.3-33.5 100.5c-4.5 13.6 8.4 26.5 21.9 21.9l100.4-33.5 47.3 94.7c6.4 12.8 24.6 12.8 31 0l47.3-94.7 100.4 33.5c13.6 4.5 26.5-8.4 21.9-21.9l-33.5-100.4 94.7-47.3c13-6.5 13-24.7.2-31.1zm-155.9 106c-49.9 49.9-131.1 49.9-181 0-49.9-49.9-49.9-131.1 0-181 49.9-49.9 131.1-49.9 181 0 49.9 49.9 49.9 131.1 0 181z"></path>
+                </svg></div>
+            </span></span>
+          <li class=""><a href="/support.html" class="font-medium tracking-wide transition-colors duration-200 text-red-500 hover:text-red-800">Support</a></li>
+          <li class=""><a href="/invite.html" class="inline-flex items-center justify-center h-12 px-6 font-medium tracking-wide text-white transition duration-200 shadow-md focus:shadow-outline focus:outline-none rounded-global bg-red-600"> Invite </a></li>
+        </ul>
+        <div class="lg:hidden"><button id="rskwcl-40" class="p-2 -mr-1 transition duration-200 rounded focus:outline-none focus:shadow-outline  "><span><svg class="w-5 text-white " class="w-5 text-gray-600" viewBox="0 0 24 24">
+                <path fill="currentColor" d="M23,13H1c-0.6,0-1-0.4-1-1s0.4-1,1-1h22c0.6,0,1,0.4,1,1S23.6,13,23,13z"></path>
+                <path fill="currentColor" d="M23,6H1C0.4,6,0,5.6,0,5s0.4-1,1-1h22c0.6,0,1,0.4,1,1S23.6,6,23,6z"></path>
+                <path fill="currentColor" d="M23,20H1c-0.6,0-1-0.4-1-1s0.4-1,1-1h22c0.6,0,1,0.4,1,1S23.6,20,23,20z"></path>
+              </svg></span></button></div>
+      </div>
+    </div>
+  </div>
+  <div class=" md:py-16">
+    <div class="max-w-7xl mx-auto flex items-center gap-6 px-5 flex-col py-14 md:flex-row lg:py-2 xl:py-0">
+      <div class="flex flex-col gap-7 lg:w-8/12 xl:w-3/5">
+        <h1 class="font-bold tracking-tight dark:text-slate-100 text-4xl text-slate-900 lg:text-5xl">Envy,</h1>
+        <p class="text-base lg:text-lg 2xl:text-gray-500">The best discord bot for all your developer and server owner needs.</p><a href="/invite.html" class="py-2 w-48 text-center text-white px-5 rounded-global text-lg bg-red-600">Invite me</a>
+      </div>
+      <div class="w-full lg:w-7/12"><img alt="No alt" src="https://i.imgur.com/7GV36oD.png" class=" sm:mx-9 sm:-my-16 md:mx-0 md:my-0 lg:w-full " /></div>
+    </div>
+  </div>
+  <div class="py-12 dark:divide-undefined dark:divide-undefined">
+    <div class="max-w-7xl mx-auto px-4 ">
+      <div class="lg:text-center">
+        <h2 class="text-base font-semibold tracking-wide uppercase text-red-500">Features</h2>
+        <p class="mt-2 text-3xl font-extrabold tracking-tight text-gray-900 dark:divide-undefined dark:text-gray-100 ">Why Choose Envy?</p>
+      </div>
+      <div class="mt-10">
+        <dl class="space-y-10 md:space-y-0 md:grid md:grid-cols-2 md:gap-x-8 md:gap-y-10">
+          <div class="relative">
+            <dt class="">
+              <div class="absolute flex items-center justify-center h-12 w-12 rounded-global text-white bg-red-500"><span class="h-6 w-6 text-xl">
+                  <div style="font-size:inherit;color:inherit;padding:2px"><svg stroke="currentColor" fill="currentColor" stroke-width="0" viewBox="0 0 384 512" height="1em" width="1em" xmlns="http://www.w3.org/2000/svg">
+                      <path d="M360 0H24C10.745 0 0 10.745 0 24v16c0 13.255 10.745 24 24 24 0 90.965 51.016 167.734 120.842 192C75.016 280.266 24 357.035 24 448c-13.255 0-24 10.745-24 24v16c0 13.255 10.745 24 24 24h336c13.255 0 24-10.745 24-24v-16c0-13.255-10.745-24-24-24 0-90.965-51.016-167.734-120.842-192C308.984 231.734 360 154.965 360 64c13.255 0 24-10.745 24-24V24c0-13.255-10.745-24-24-24zm-75.078 384H99.08c17.059-46.797 52.096-80 92.92-80 40.821 0 75.862 33.196 92.922 80zm.019-256H99.078C91.988 108.548 88 86.748 88 64h208c0 22.805-3.987 44.587-11.059 64z"></path>
+                    </svg></div>
+                </span></div>
+              <p class="ml-16 text-xl leading-6 text-gray-900 dark:text-gray-100 font-bold">Quick setup and Response time</p>
+            </dt>
+            <dd class="mt-2 ml-16 text-base ">
+              <p class="">We host our bot on the fastest servers we can find and we have made the setup process for our bot the quickest we possibly can.</p>
+            </dd>
+          </div>
+          <div class="relative">
+            <dt class="">
+              <div class="absolute flex items-center justify-center h-12 w-12 rounded-global text-white bg-red-500"><span class="h-6 w-6 text-xl">
+                  <div style="font-size:inherit;color:inherit;padding:2px"><svg stroke="currentColor" fill="currentColor" stroke-width="0" viewBox="0 0 352 512" height="1em" width="1em" xmlns="http://www.w3.org/2000/svg">
+                      <path d="M176 80c-52.94 0-96 43.06-96 96 0 8.84 7.16 16 16 16s16-7.16 16-16c0-35.3 28.72-64 64-64 8.84 0 16-7.16 16-16s-7.16-16-16-16zM96.06 459.17c0 3.15.93 6.22 2.68 8.84l24.51 36.84c2.97 4.46 7.97 7.14 13.32 7.14h78.85c5.36 0 10.36-2.68 13.32-7.14l24.51-36.84c1.74-2.62 2.67-5.7 2.68-8.84l.05-43.18H96.02l.04 43.18zM176 0C73.72 0 0 82.97 0 176c0 44.37 16.45 84.85 43.56 115.78 16.64 18.99 42.74 58.8 52.42 92.16v.06h48v-.12c-.01-4.77-.72-9.51-2.15-14.07-5.59-17.81-22.82-64.77-62.17-109.67-20.54-23.43-31.52-53.15-31.61-84.14-.2-73.64 59.67-128 127.95-128 70.58 0 128 57.42 128 128 0 30.97-11.24 60.85-31.65 84.14-39.11 44.61-56.42 91.47-62.1 109.46a47.507 47.507 0 0 0-2.22 14.3v.1h48v-.05c9.68-33.37 35.78-73.18 52.42-92.16C335.55 260.85 352 220.37 352 176 352 78.8 273.2 0 176 0z"></path>
+                    </svg></div>
+                </span></div>
+              <p class="ml-16 text-xl leading-6 font-semibold text-gray-900 dark:divide-undefined dark:text-gray-100 xl:font-semibold">Custom Commands</p>
+            </dt>
+            <dd class="mt-2 ml-16 text-base ">
+              <p class="">You can make our bot have custom commands/keywords it responds to.</p>
+            </dd>
+          </div>
+          <div class="relative">
+            <dt class="">
+              <div class="absolute flex items-center justify-center h-12 w-12 rounded-global text-white bg-red-500"><span class="h-6 w-6 text-xl">
+                  <div style="font-size:inherit;color:inherit;padding:2px"><svg stroke="currentColor" fill="currentColor" stroke-width="0" viewBox="0 0 512 512" height="1em" width="1em" xmlns="http://www.w3.org/2000/svg">
+                      <path d="M383.8 351.7c2.5-2.5 105.2-92.4 105.2-92.4l-17.5-7.5c-10-4.9-7.4-11.5-5-17.4 2.4-7.6 20.1-67.3 20.1-67.3s-47.7 10-57.7 12.5c-7.5 2.4-10-2.5-12.5-7.5s-15-32.4-15-32.4-52.6 59.9-55.1 62.3c-10 7.5-20.1 0-17.6-10 0-10 27.6-129.6 27.6-129.6s-30.1 17.4-40.1 22.4c-7.5 5-12.6 5-17.6-5C293.5 72.3 255.9 0 255.9 0s-37.5 72.3-42.5 79.8c-5 10-10 10-17.6 5-10-5-40.1-22.4-40.1-22.4S183.3 182 183.3 192c2.5 10-7.5 17.5-17.6 10-2.5-2.5-55.1-62.3-55.1-62.3S98.1 167 95.6 172s-5 9.9-12.5 7.5C73 177 25.4 167 25.4 167s17.6 59.7 20.1 67.3c2.4 6 5 12.5-5 17.4L23 259.3s102.6 89.9 105.2 92.4c5.1 5 10 7.5 5.1 22.5-5.1 15-10.1 35.1-10.1 35.1s95.2-20.1 105.3-22.6c8.7-.9 18.3 2.5 18.3 12.5S241 512 241 512h30s-5.8-102.7-5.8-112.8 9.5-13.4 18.4-12.5c10 2.5 105.2 22.6 105.2 22.6s-5-20.1-10-35.1 0-17.5 5-22.5z"></path>
+                    </svg></div>
+                </span></div>
+              <p class="ml-16 text-xl leading-6 font-semibold text-gray-900 dark:text-gray-100 xl:font-semibold">Customizable prefix</p>
+            </dt>
+            <dd class="mt-2 ml-16 text-base ">
+              <p class="">You can customize the bot's prefix in your guild. If you forget your custom prefix you can always mention the bot to be reminded.</p>
+            </dd>
+          </div>
+        </dl>
+      </div>
+    </div>
+  </div>
+</body>
+</html>
